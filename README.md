@@ -83,11 +83,18 @@ Leave `VITE_PROXY_URL` unset. The hook falls through to corsproxy.io / allorigin
 
 1. Push this repo to GitHub.
 2. **Settings → Pages → Source**: choose **GitHub Actions**.
-3. *(Optional)* Add `VITE_PROXY_URL` as a repository secret/variable and uncomment the env line in `deploy.yml`.
+3. Add the following repository **Secrets**:
+   - `CLOUDFLARE_API_TOKEN` (Worker deploy token)
+   - `CLOUDFLARE_ACCOUNT_ID`
+4. Add the following repository **Variable**:
+   - `VITE_PROXY_URL=https://umn-parking-ics.<your-subdomain>.workers.dev`
 
 ### Deploy
 
-Push to `main` — the workflow builds and deploys automatically.
+Push to `main` — the workflow will:
+1. Deploy `worker/index.js` to Cloudflare Workers
+2. Build the Vite app using `VITE_PROXY_URL`
+3. Deploy `dist/` to GitHub Pages
 
 ```
 https://<username>.github.io/CampusEventParking/
