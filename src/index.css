@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@theme {
+  /* UMN brand colors */
+  --color-maroon: #7a0019;
+  --color-maroon-dark: #5a0013;
+  --color-gold: #ffcc33;
+}

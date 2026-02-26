@@ -1,0 +1,11 @@
+node_modules
+dist
+.env
+.env.local
+*.local
+.DS_Store
+coverage
+
+# AI assistant local context/config
+CLAUDE.md
+.claude/
